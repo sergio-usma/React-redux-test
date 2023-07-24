@@ -1,10 +1,13 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
 const Uno = () => {
+    const dispatch = useDispatch();
+    const miNombreAhora = useSelector(state => state.unValor.miNombre)
     return (
-        <div>
-            <h1>Uno</h1>
-        </div>
+        <>
+            <h1>{ miNombreAhora }</h1>
+        </>
     )
 }
 
