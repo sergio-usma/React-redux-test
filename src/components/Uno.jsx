@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { guardarMinombre, incrementarPuntuacion } from "../redux/slices";
+import { guardarMinombre, incrementarPuntuacion, modificarUnValor } from "../redux/slices";
 
 const Uno = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,11 @@ const Uno = () => {
   };
 
   const modificarArray = () => {
-    dispatch(incrementarPuntuacion());
+    dispatch(modificarUnValor({
+        indice:0,
+        nuevoNombre: 'React',
+        nuevoInicio: 'Mayo de 2013'
+    }));
   };
 
   return (

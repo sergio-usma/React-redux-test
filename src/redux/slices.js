@@ -14,6 +14,11 @@ export const origenSlice = createSlice({
     guardarMinombre: (state, action) => {
       state.miNombre = action.payload;
     },
+    modificarUnValor:(state, action) => {
+        const { indice, nuevoNombre, nuevoInicio } = action.payload
+        state.bibliotecas[indice].nombre = nuevoNombre;
+        state.bibliotecas[indice].inicio = nuevoInicio;
+    }
   },
 });
 
@@ -27,5 +32,5 @@ export const otroSlice = createSlice({
   },
 });
 
-export const { guardarMinombre } = origenSlice.actions;
+export const { guardarMinombre, modificarUnValor } = origenSlice.actions;
 export const { incrementarPuntuacion } = otroSlice.actions;
