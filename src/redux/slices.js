@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+let unValor;
 
 export const origenSlice = createSlice({
     name: unValor,
