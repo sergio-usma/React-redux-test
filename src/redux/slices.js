@@ -14,15 +14,26 @@ export const origenSlice = createSlice({
     guardarMinombre: (state, action) => {
       state.miNombre = action.payload;
     },
-    modificarUnValor:(state, action) => {
-        const { indice, nuevoNombre, nuevoInicio } = action.payload
-        state.bibliotecas[indice].nombre = nuevoNombre;
-        state.bibliotecas[indice].inicio = nuevoInicio;
+    modificarUnValor: (state, action) => {
+      const { indice, nuevoNombre, nuevoInicio } = action.payload;
+      state.bibliotecas[indice].nombre = nuevoNombre;
+      state.bibliotecas[indice].inicio = nuevoInicio;
     },
-    agregarUnValor:(state, action) => {
-        const { nuevoNombre, nuevoInicio } = action.payload
-        state.bibliotecas = [...state.bibliotecas]
-    }
+    agregarUnValor: (state, action) => {
+      const { nuevoNombre, nuevoInicio } = action.payload;
+      state.bibliotecas = [
+        ...state.bibliotecas,
+        {
+          nombre: nuevoNombre,
+          inicio: nuevoInicio,
+        },
+      ];
+    },
+    eliminarUnValor: (state, action) => {
+      state.bibliotecas = state.bibliotecas.filter(
+        (valor) => valor.nombre !== action.payload,
+      );
+    },
   },
 });
 
@@ -36,5 +47,10 @@ export const otroSlice = createSlice({
   },
 });
 
-export const { guardarMinombre, modificarUnValor } = origenSlice.actions;
+export const {
+  guardarMinombre,
+  modificarUnValor,
+  agregarUnValor,
+  eliminarUnValor,
+} = origenSlice.actions;
 export const { incrementarPuntuacion } = otroSlice.actions;
