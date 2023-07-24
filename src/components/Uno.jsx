@@ -15,12 +15,17 @@ const Uno = () => {
     dispatch(incrementarPuntuacion());
   };
 
+  const modificarArray = () => {
+    dispatch(incrementarPuntuacion());
+  };
+
   return (
     <>
       <h1>{miNombreAhora}</h1>
       <h1>{miPuntuacionAhora}</h1>
       <button onClick={modificar}>Modificar mi nombre</button>
       <button onClick={incrementar}>Incrementar puntuacion</button>
+      <button onClick={modificarArray}>Modificar Array</button>
     </>
   );
 };

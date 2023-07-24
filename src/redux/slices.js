@@ -2,7 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const origenSlice = createSlice({
   name: "unValor",
-  initialState: { miNombre: "Andy" },
+  initialState: {
+    miNombre: "Andy",
+    edad: 18,
+    bibliotecas: [
+      { nombre: "React", inicio: 2013 },
+      { nombre: "Redux", inicio: 2015 },
+    ],
+  },
   reducers: {
     guardarMinombre: (state, action) => {
       state.miNombre = action.payload;
