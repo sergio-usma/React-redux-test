@@ -16,8 +16,8 @@ const App = () => {
           </Link>
         </nav>
         <Routes>
-          <Route path="/uno" component={Uno} />
-          <Route path="/dos" component={Dos} />
+          <Route path="/dos" element={<Dos />} />
+          <Route path="/uno" element={<Uno />} />
         </Routes>
       </Router>
     </>
