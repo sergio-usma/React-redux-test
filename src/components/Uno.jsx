@@ -23,6 +23,19 @@ const Uno = () => {
     }));
   };
 
+  const agregar = () => {
+    dispatch(agregarUnValor({
+        nuevoNombre: 'Vue',
+        nuevoInicio: 2014
+    }))
+
+  }
+
+  const eliminar = () => {
+    dispatch(eliminarUnValor('Vue'))
+    
+  }
+
   return (
     <>
       <h1>{miNombreAhora}</h1>
@@ -30,6 +43,8 @@ const Uno = () => {
       <button onClick={modificar}>Modificar mi nombre</button>
       <button onClick={incrementar}>Incrementar puntuacion</button>
       <button onClick={modificarArray}>Modificar Array</button>
+      <button onClick={agregar}>Agregar un valor</button>
+      <button onClick={eliminar}>Eliminar un Valor</button>
     </>
   );
 };

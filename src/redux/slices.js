@@ -18,6 +18,10 @@ export const origenSlice = createSlice({
         const { indice, nuevoNombre, nuevoInicio } = action.payload
         state.bibliotecas[indice].nombre = nuevoNombre;
         state.bibliotecas[indice].inicio = nuevoInicio;
+    },
+    agregarUnValor:(state, action) => {
+        const { nuevoNombre, nuevoInicio } = action.payload
+        state.bibliotecas = [...state.bibliotecas]
     }
   },
 });
